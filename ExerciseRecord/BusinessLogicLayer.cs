@@ -113,6 +113,10 @@ namespace ExerciseRecord
                 return -1;
             if (x.DateTime > y.DateTime)
                 return 1;
+            else if (x.CreatTime > y.CreatTime)
+                return 1;
+            else if (x.CreatTime < y.CreatTime)
+                return -1;
             return 0;
         }
     }

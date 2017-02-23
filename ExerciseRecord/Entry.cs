@@ -13,6 +13,7 @@ namespace ExerciseRecord
     {
         public string Description { get;set; }
         public DateTime DateTime { get;set; }
+        public DateTime CreatTime { get; set; }
         
         [XmlIgnore]
         public TimeSpan Duration { get;set; }
@@ -31,6 +32,18 @@ namespace ExerciseRecord
             Description = description;
             DateTime = dateTime;
             Duration = timeSpan;
+            CreatTime = DateTime.Now;
         }
     }
+    //public class entrycomparebycreat : icomparer<entry>
+    //{
+    //    public int compare(entry x, entry y)
+    //    {
+    //        if (x.creattime > y.creattime)
+    //            return 1;
+    //        if (x.creattime < y.creattime)
+    //            return -1;
+    //        return 0;
+    //    }
+    //}
 }

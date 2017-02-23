@@ -39,7 +39,6 @@
             this.addRowButton = new System.Windows.Forms.Button();
             this.removeRowButton = new System.Windows.Forms.Button();
             this.bindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.saveButton = new System.Windows.Forms.Button();
             this.stratButton = new System.Windows.Forms.Button();
             this.endTimingButton = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -107,7 +106,7 @@
             this.recordGird.Size = new System.Drawing.Size(863, 320);
             this.recordGird.TabIndex = 2;
             this.recordGird.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.recordGird_CellValueChanged);
-            this.recordGird.CurrentCellDirtyStateChanged += new System.EventHandler(this.recordGird_CurrentCellDirtyStateChanged);
+            this.recordGird.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.recordGird_DataError);
             // 
             // addRowButton
             // 
@@ -128,17 +127,6 @@
             this.removeRowButton.Text = "Remove";
             this.removeRowButton.UseVisualStyleBackColor = true;
             this.removeRowButton.Click += new System.EventHandler(this.removeRowButton_Click);
-            // 
-            // saveButton
-            // 
-            this.saveButton.Location = new System.Drawing.Point(748, 26);
-            this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(127, 36);
-            this.saveButton.TabIndex = 5;
-            this.saveButton.Text = "(abandoned)Save";
-            this.saveButton.UseVisualStyleBackColor = true;
-            this.saveButton.Visible = false;
-            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // stratButton
             // 
@@ -199,7 +187,6 @@
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.endTimingButton);
             this.Controls.Add(this.stratButton);
-            this.Controls.Add(this.saveButton);
             this.Controls.Add(this.removeRowButton);
             this.Controls.Add(this.addRowButton);
             this.Controls.Add(this.recordGird);
@@ -230,7 +217,6 @@
         private System.Windows.Forms.Button addRowButton;
         private System.Windows.Forms.Button removeRowButton;
         private System.Windows.Forms.BindingSource bindingSource;
-        private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.ToolStripDropDownButton Start;
         private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
